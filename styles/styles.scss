@@ -1,0 +1,255 @@
+//media query mixin
+@mixin resp( $width ) {
+	@if $width==480 {
+		@media ( max-width: 480px ) {
+			@content;
+		}
+	}
+	@if $width==600 {
+		@media ( max-width: 600px ) {
+			@content;
+		}
+	}
+	@if $width==768 {
+		@media ( max-width: 768px ) {
+			@content;
+		}
+	}
+    @if $width==991 {
+		@media ( max-width: 991px ) {
+			@content;
+		}
+	}
+	@if $width==1024 {
+		@media ( max-width: 1024px ) {
+			@content;
+		}
+	}
+	@if $width==1140 {
+		@media ( max-width: 1140px ) {
+			@content;
+		}
+	}
+}
+
+//variables
+
+$color1: khaki;
+$color2: black;
+
+//General Styles
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1190px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+//Navbar
+.navbar {
+    padding: 8px;
+    display: flex;
+    max-height: 107px;
+    background-color: $color1;
+    transition: all 1s ease-in-out;
+    
+    @include resp(768) {
+        max-height: 100%;
+    }
+    
+    .navbar__input {
+      display: none;
+    }
+    
+    #nav {
+        &:checked + .navbar__btn {
+            transform: rotate(45deg);
+        }
+        
+        &::checked + .navbar__btn i {
+            background: #000;
+            transition: transform 0.2s ease;
+        }
+        
+        &:checked + .navbar__btn i:nth-child(1) {
+            transform: translateY(6px) rotate(180deg);
+        }
+        
+        &:checked + .navbar__btn i:nth-child(2) {
+            opacity: 0;
+        }
+        
+        &:checked + .navbar__btn i:nth-child(3) {
+            transform: translateY(-6px) rotate(90deg);
+        }
+        
+        &:checked ~ .navbar__wrapper {
+            z-index: 9990;
+            opacity: 1;
+        }
+        
+        &:checked ~ .navbar__wrapper ul li a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+    }
+    
+    .navbar__logo {
+        display: inline-flex;
+        padding: 20px 0;
+        
+        a {
+            span {
+                font-size: 30px;
+            }
+        }
+    }
+    
+    .navbar__wrapper {
+        display: inline-flex;
+        margin: auto;
+        
+        @include resp(768) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #fff;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+        
+        ul {
+            @include resp(768) {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+            }
+            
+            li {
+                display: inline-block;
+                padding: 6px 0;
+                border-bottom: 2px solid transparent;
+                border-top: 2px solid transparent;
+                
+                &:hover {
+                    border-bottom: 2px solid $color2;
+                }
+                
+                &:not(:first-child) {
+                    margin-left: 38px;
+                }
+                
+                &:last-child {
+                    margin-right: 24px;
+                }
+                
+                a {
+                    display: inline-block;
+                    
+                    @include resp(768) {
+                        padding: 10px 24px;
+                        opacity: 0;
+                        color: #000;
+                        font-size: 14px;
+                        font-weight: 600;
+                        letter-spacing: 1.2px;
+                        transform: translateX(-20px);
+                        transition: all 0.2s ease;
+                    }
+                }
+                
+                @include resp(768) {
+                    display: block;
+                    width: 100%;
+                    text-align: right;
+                    margin-bottom: 10px;
+                    
+                    &:nth-child(1) a {
+                        transition-delay: 0.2s;
+                    }
+                    
+                    &:nth-child(2) a {
+                        transition-delay: 0.3s;
+                    }
+                    
+                    &:nth-child(3) a {
+                        transition-delay: 0.4s;
+                    }
+                    
+                    &:nth-child(4) a {
+                        transition-delay: 0.5s;
+                    }
+                    
+                    &:not(:first-child) {
+                        margin-left: 0;
+                  }
+                }
+            }
+        }
+    }
+    
+    .navbar__btn {
+        @include resp(768) {
+            position: absolute;
+            right: 10px;
+            top: 30px;
+            display: block;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            z-index: 9999;
+            border-radius: 50%;   
+        }
+        
+        i {
+            @include resp(768) {
+                display: block;
+                width: 20px;
+                height: 2px;
+                background: #000;
+                border-radius: 2px;
+                margin-left: 14px;
+                
+                &:nth-child(1) {
+                    margin-top: 16px;
+              }
+                
+                &:nth-child(2) {
+                    margin-top: 4px;
+                    opacity: 1;
+              }
+                
+                &:nth-child(3) {
+                    margin-top: 4px;
+                }
+            }
+        }
+      }
+}
