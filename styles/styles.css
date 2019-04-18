@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'amaranth-regular';
+  src: url("../fonts/Amaranth-Regular.ttf"); }
+@font-face {
+  font-family: 'amaranth-italic';
+  src: url("../fonts/Amaranth-Italic.ttf"); }
+@font-face {
+  font-family: 'amaranth-boldItalic';
+  src: url("../fonts/Amaranth-BoldItalic.ttf"); }
+@font-face {
+  font-family: 'amaranth-bold';
+  src: url("../fonts/Amaranth-Bold.ttf"); }
+@keyframes jump {
+  0% {
+    transform: translateY(0%); }
+  25% {
+    transform: translateY(-12.5%); }
+  50% {
+    transform: translateY(-25%); }
+  75% {
+    transform: translateY(-12.5%); }
+  100% {
+    transform: translateY(0); } }
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -10,6 +33,58 @@ body, html {
 
 html {
   scroll-behavior: smooth; }
+
+h1 {
+  font-family: "amaranth-bold";
+  font-size: 52px;
+  color: #000000;
+  line-height: normal;
+  margin: 0; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 42px; } }
+
+h2 {
+  font-family: "amaranth-bold";
+  font-size: 32px;
+  color: #000000;
+  line-height: normal;
+  margin: 0; }
+
+h3 {
+  font-family: "amaranth-bold";
+  font-size: 26px;
+  color: #000000;
+  line-height: normal;
+  margin: 0; }
+
+h4 {
+  font-family: "amaranth-bold";
+  font-size: 24px;
+  color: #000000;
+  line-height: normal;
+  margin: 0; }
+
+h5 {
+  font-family: "amaranth-bold";
+  font-size: 20px;
+  color: #000000;
+  line-height: normal;
+  margin: 0; }
+
+h6 {
+  font-family: "amaranth-bold";
+  font-size: 18px;
+  color: #000000;
+  line-height: normal;
+  margin: 0; }
+
+p {
+  font-family: "amaranth-regular";
+  font-size: 16px;
+  margin: 0;
+  line-height: 0;
+  color: #000000; }
 
 a {
   text-decoration: none; }
@@ -26,8 +101,7 @@ a {
   padding: 8px;
   display: flex;
   max-height: 107px;
-  background-color: khaki;
-  transition: all 1s ease-in-out; }
+  background-color: #ffffff; }
   @media (max-width: 768px) {
     .navbar {
       max-height: 100%; } }
@@ -54,10 +128,12 @@ a {
     display: inline-flex;
     padding: 20px 0; }
     .navbar .navbar__logo a span {
-      font-size: 30px; }
+      font-family: "amaranth-bold";
+      font-size: 30px;
+      color: #000000; }
   .navbar .navbar__wrapper {
     display: inline-flex;
-    margin: auto; }
+    margin-left: auto; }
     @media (max-width: 768px) {
       .navbar .navbar__wrapper {
         position: absolute;
@@ -81,18 +157,21 @@ a {
       border-bottom: 2px solid transparent;
       border-top: 2px solid transparent; }
       .navbar .navbar__wrapper ul li:hover {
-        border-bottom: 2px solid black; }
+        border-bottom: 2px solid #000000; }
       .navbar .navbar__wrapper ul li:not(:first-child) {
         margin-left: 38px; }
       .navbar .navbar__wrapper ul li:last-child {
         margin-right: 24px; }
       .navbar .navbar__wrapper ul li a {
-        display: inline-block; }
+        display: inline-block;
+        font-family: "amaranth-regular";
+        color: #000000;
+        font-size: 20px; }
         @media (max-width: 768px) {
           .navbar .navbar__wrapper ul li a {
             padding: 10px 24px;
             opacity: 0;
-            color: #000;
+            color: #000000;
             font-size: 14px;
             font-weight: 600;
             letter-spacing: 1.2px;
@@ -118,7 +197,7 @@ a {
     .navbar .navbar__btn {
       position: absolute;
       right: 10px;
-      top: 30px;
+      top: 25px;
       display: block;
       width: 48px;
       height: 48px;
@@ -141,4 +220,42 @@ a {
       .navbar .navbar__btn i:nth-child(3) {
         margin-top: 4px; } }
 
-/*# sourceMappingURL=styles.css.map */
+.mainBanner {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/beans-chopping-board-food-616358%20(1).jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 4px solid #ffffff;
+  padding: 100px 0 30px 0; }
+  .mainBanner:before {
+    content: url("../images/arrow.png");
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%); }
+  .mainBanner .wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .mainBanner .wrapper .mainBanner__heading--main {
+      color: #ffffff;
+      margin: 60px 0 10px 0;
+      text-transform: uppercase; }
+    .mainBanner .wrapper .mainBanner__heading--sub {
+      color: #ffffff;
+      margin: 0 0 60px 0;
+      text-transform: uppercase; }
+    .mainBanner .wrapper .mainBanner__link {
+      font-family: "amaranth-regular";
+      font-size: 20px;
+      color: #ffffff;
+      margin: 70px 0 0 0;
+      animation: jump 1.5s linear infinite; }
+      .mainBanner .wrapper .mainBanner__link:hover {
+        color: #fed206; }
+
+#about .about__heading {
+  text-transform: uppercase; }

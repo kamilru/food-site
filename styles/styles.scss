@@ -1,3 +1,24 @@
+//fonts 
+@font-face {
+    font-family: 'amaranth-regular';
+    src: url('../fonts/Amaranth-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'amaranth-italic';
+    src: url("../fonts/Amaranth-Italic.ttf");
+}
+
+@font-face {
+    font-family: 'amaranth-boldItalic';
+    src: url("../fonts/Amaranth-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: 'amaranth-bold';
+    src: url("../fonts/Amaranth-Bold.ttf");
+}
+
 //media query mixin
 @mixin resp( $width ) {
 	@if $width==480 {
@@ -34,8 +55,37 @@
 
 //variables
 
-$color1: khaki;
-$color2: black;
+$color1: #ffffff;
+$color2: #000000;
+$color3: #fed206;
+
+//fonts variables 
+
+$amareg: 'amaranth-regular';
+$amabold: 'amaranth-bold';
+$amabolditalic: 'amaranth-boldItalic';
+$amaitalic: 'amaranth-italic';
+
+//animation 
+
+@keyframes jump {
+    0% {
+        transform: translateY(0%);
+    }
+    25% {
+        transform: translateY(-12.5%);
+    }
+    50% {
+        transform: translateY(-25%);
+    }
+    75% {
+        transform: translateY(-12.5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
+}
 
 //General Styles
 *, *:before, *:after {
@@ -52,6 +102,66 @@ body, html {
 
 html {
     scroll-behavior: smooth;
+}
+
+h1 {
+    font-family: $amabold;
+    font-size: 52px;
+    color: $color2;
+    line-height: normal;
+    margin: 0;
+    
+    @include resp(768) {
+        font-size: 42px;
+    }
+}
+
+h2 {
+    font-family: $amabold;
+    font-size: 32px;
+    color: $color2;
+    line-height: normal;
+    margin: 0;
+}
+
+h3 {
+    font-family: $amabold;
+    font-size: 26px;
+    color: $color2;
+    line-height: normal;
+    margin: 0;
+}
+
+h4 {
+    font-family: $amabold;
+    font-size: 24px;
+    color: $color2;
+    line-height: normal;
+    margin: 0;
+}
+
+h5 {
+    font-family: $amabold;
+    font-size: 20px;
+    color: $color2;
+    line-height: normal;
+    margin: 0;
+}
+
+h6 {
+    font-family: $amabold;
+    font-size: 18px;
+    color: $color2;
+    line-height: normal;
+    margin: 0;
+}
+
+p {
+    font-family: $amareg;
+    font-size: 16px;
+    margin: 0;
+    line-height: 0;
+    color: $color2;
 }
 
 a {
@@ -73,7 +183,6 @@ a {
     display: flex;
     max-height: 107px;
     background-color: $color1;
-    transition: all 1s ease-in-out;
     
     @include resp(768) {
         max-height: 100%;
@@ -123,14 +232,16 @@ a {
         
         a {
             span {
+                font-family: $amabold;
                 font-size: 30px;
+                color: $color2;
             }
         }
     }
     
     .navbar__wrapper {
         display: inline-flex;
-        margin: auto;
+        margin-left: auto;
         
         @include resp(768) {
             position: absolute;
@@ -172,11 +283,15 @@ a {
                 
                 a {
                     display: inline-block;
+                    font-family: $amareg;
+                    color: $color2;
+                    font-size: 20px;
+                    
                     
                     @include resp(768) {
                         padding: 10px 24px;
                         opacity: 0;
-                        color: #000;
+                        color: $color2;
                         font-size: 14px;
                         font-weight: 600;
                         letter-spacing: 1.2px;
@@ -219,7 +334,7 @@ a {
         @include resp(768) {
             position: absolute;
             right: 10px;
-            top: 30px;
+            top: 25px;
             display: block;
             width: 48px;
             height: 48px;
@@ -251,5 +366,61 @@ a {
                 }
             }
         }
-      }
+    }
+}
+
+.mainBanner {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/beans-chopping-board-food-616358%20(1).jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 4px solid $color1;
+    padding: 100px 0 30px 0;
+    
+    &:before {
+        content: url("../images/arrow.png");
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+    }
+    
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        .mainBanner__heading--main {
+            color: $color1;
+            margin: 60px 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .mainBanner__heading--sub {
+            color: $color1;
+            margin: 0 0 60px 0;
+            text-transform: uppercase;
+        }
+        
+        .mainBanner__link {
+            font-family: $amareg;
+            font-size: 20px;
+            color: $color1;
+            margin: 70px 0 0 0;
+            animation: jump 1.5s linear infinite;
+            
+            &:hover {
+                color: $color3;
+            }
+        }
+    }
+}
+
+#about {
+    .about__heading {
+        text-transform: uppercase;
+    }
 }
