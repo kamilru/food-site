@@ -39,6 +39,8 @@ $color1: #ffffff;
 $color2: #000000;
 $color3: #fed206;
 $color4: #f9f9f9;
+$color5: #85fa1b;
+$color6: #ff0000;
 
 //fonts variables 
 
@@ -543,7 +545,7 @@ a {
             
                  &:focus {
                     &:invalid {
-                        border: 2px solid red;
+                        border: 2px solid $color6;
                     }
             
                 }
@@ -580,6 +582,24 @@ a {
                     outline: 1px dashed $color3;
                 }
             }
+            
+            .result--positive {
+                display: none;
+                padding: 30px 0 0 0;
+                
+                p {
+                   color: $color5; 
+                }
+            }
+            
+            .result--negative {
+                display: none;
+                padding: 30px 0 0 0;
+                
+                p {
+                   color: $color6; 
+                }
+            }
         }
     }
 }
@@ -597,6 +617,12 @@ a {
             list-style: none;
             width: 50%;
             margin: 10px 0;
+            padding: 0;
+            
+            @include resp(768) {
+                width: 100%;
+                justify-content: center;
+            }
             
             li {
                 a {
@@ -615,6 +641,11 @@ a {
             justify-content: flex-end;
             width: 50%;
             margin: 10px 0;
+            
+            @include resp(768) {
+                width: 100%;
+                justify-content: center;
+            }
             
             .socialIcons__ico {
                 width: 25px;

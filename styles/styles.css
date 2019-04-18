@@ -358,7 +358,7 @@ a {
         .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInput::placeholder {
           opacity: 0.6; }
         .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInput:focus:invalid {
-          border: 2px solid red; }
+          border: 2px solid #ff0000; }
         .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInput:required:valid {
           background: #ffffff url(../images/check.png);
           background-repeat: no-repeat;
@@ -381,6 +381,16 @@ a {
           border: 2px solid #fed206; }
         .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardSubmit:focus {
           outline: 1px dashed #fed206; }
+      .subscribeSection .wrapper .subscribeSection__card .result--positive {
+        display: none;
+        padding: 30px 0 0 0; }
+        .subscribeSection .wrapper .subscribeSection__card .result--positive p {
+          color: #85fa1b; }
+      .subscribeSection .wrapper .subscribeSection__card .result--negative {
+        display: none;
+        padding: 30px 0 0 0; }
+        .subscribeSection .wrapper .subscribeSection__card .result--negative p {
+          color: #ff0000; }
 
 .footer {
   padding: 15px 0;
@@ -392,7 +402,12 @@ a {
       align-items: center;
       list-style: none;
       width: 50%;
-      margin: 10px 0; }
+      margin: 10px 0;
+      padding: 0; }
+      @media (max-width: 768px) {
+        .footer .wrapper .footer__nav {
+          width: 100%;
+          justify-content: center; } }
       .footer .wrapper .footer__nav li a {
         color: #ffffff;
         margin: 0 15px 0 0; }
@@ -403,6 +418,10 @@ a {
       justify-content: flex-end;
       width: 50%;
       margin: 10px 0; }
+      @media (max-width: 768px) {
+        .footer .wrapper .socialIcons {
+          width: 100%;
+          justify-content: center; } }
       .footer .wrapper .socialIcons .socialIcons__ico {
         width: 25px;
         height: 25px;

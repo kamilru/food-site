@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is one of the best food...">
+    <meta name="keywords" content="Food, premium, best food, food news">
     <link type="text/css" rel="stylesheet" href="styles/styles.css">
     <title>Premium Food Brand</title>
 </head>
@@ -38,7 +40,7 @@
     
     <section id="about" class="aboutSection">
         <div class="wrapper">
-            <h2 class="aboutSection__heading--main">EVERY SMOOTHIE IS AN EXPERIENCE.</h2>
+            <h2 class="aboutSection__heading--main">EVERY SMOOTHIE IS AN EXPERIENCE</h2>
             <h3 class="aboutSection__heading--sub">MAKE IT COUNT!</h3>
             <div class="row">
                 <div class="col-6">
@@ -61,12 +63,18 @@
         <div class="wrapper">
             <h2 class="subscribeSection__heading">STAY ALERT</h2>
             <div class="subscribeSection__card">
-                <h3 class="subscribeSection__cardHeading">SIGN UP FOR OUR MAILING LIST TO GET UPDATES.</h3>
-                <form>
+                <h3 class="subscribeSection__cardHeading">SIGN UP FOR OUR MAILING LIST TO GET UPDATES</h3>
+                <form id="subscribeForm">
                     <label for="emailSub" class="subscribeSection__cardInputLabel" aria-label="email">Leave your email: </label>
-                    <input id="emailSub" type="email" placeholder="Email" class="subscribeSection__cardInput" required>
+                    <input id="emailSub" name="Email" type="email" placeholder="Email" class="subscribeSection__cardInput" required>
                     <input type="submit" class="subscribeSection__cardSubmit" id="submitBtn" value="Subscribe">
                 </form>
+                <div class="result--positive">
+                    <p>You're subscribing now!</p>
+                </div>
+                <div class="result--negative">
+                    <p>Something went wrong...</p>
+                </div>
             </div>
         </div>
     </section>
@@ -86,7 +94,7 @@
             <p class="footer__copyright">Copyright &copy; by <a href="mailto:example@example.pl">FoodDesign</a>. All rights reserved.</p>
         </div>
     </footer>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 </html>

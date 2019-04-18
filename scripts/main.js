@@ -16,3 +16,28 @@ function stickyNav() {
 
 
 window.addEventListener('scroll', stickyNav);
+
+
+//ajax request with jquery
+$(document).ready(function(){
+    $('#subscribeForm').submit(function(){
+     
+        $.ajax({
+            type: 'POST',
+            url: 'test.php', 
+            data: $(this).serialize()
+        })
+        .done(function(data){
+            $('.result--positive').show();
+            console.log(data);
+            $('#emailSub').val("");
+        })
+        .fail(function() {
+            $('.result--negative').show();
+             
+        });
+        
+        return false;
+ 
+    });
+});
