@@ -58,6 +58,7 @@
 $color1: #ffffff;
 $color2: #000000;
 $color3: #fed206;
+$color4: #f9f9f9;
 
 //fonts variables 
 
@@ -175,6 +176,30 @@ a {
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-6 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0 15px;
+    
+    @include resp(768) {
+        max-width: 100%;
+        width: 100%;
+        flex: auto;
+    }
 }
 
 //Navbar
@@ -375,7 +400,7 @@ a {
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
-    border-bottom: 4px solid $color1;
+    border-bottom: 4px solid $color3;
     padding: 100px 0 30px 0;
     
     &:before {
@@ -411,6 +436,7 @@ a {
             color: $color1;
             margin: 70px 0 0 0;
             animation: jump 1.5s linear infinite;
+            cursor: pointer;
             
             &:hover {
                 color: $color3;
@@ -419,8 +445,76 @@ a {
     }
 }
 
-#about {
-    .about__heading {
-        text-transform: uppercase;
+.aboutSection {
+    padding: 50px 0 40px 0;
+    
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        
+        .aboutSection__heading--main {
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+        }
+        
+        .aboutSection__heading--sub {
+            text-transform: uppercase;
+            margin: 0 0 40px 0;
+        }
+        
+        .aboutSection__wrapper {
+            padding: 10px 50px 10px;
+            
+            .aboutSection__ico {
+                width: 120px;
+                height: auto;
+                margin: 0 0 20px 0;
+            }
+            
+            h6 {
+                font-family: $amabolditalic;
+            }
+        }
+    }
+}
+
+.subscribeSection {
+    padding: 50px 0 0 0;
+     background-color: $color4;
+    
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        
+        .subscribeSection__heading {
+            text-transform: uppercase;
+        }
+        
+        .subscribeSection__card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 70%;
+            margin: 50px auto;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+            border: none;
+            border-radius: 10px;
+            padding: 30px 10px;
+            background-color: $color1;
+            
+            .subscribeSection__cardHeading {
+                max-width: 400px;
+                margin: 0 auto 15px;
+            }
+            
+            .subscribeSection__cardInputLabel {
+                display: block;
+                font-family: $amareg;
+                font-size: 16px;
+                color: $color2;
+                margin: 10px 0;
+            }
+        }
     }
 }

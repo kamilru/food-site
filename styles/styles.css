@@ -95,7 +95,28 @@ a {
   max-width: 1190px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 10px; }
+  padding: 0 10px;
+  text-align: center; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px; }
+
+.col-6 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin: 0 auto;
+  align-items: center;
+  padding: 0 15px; }
+  @media (max-width: 768px) {
+    .col-6 {
+      max-width: 100%;
+      width: 100%;
+      flex: auto; } }
 
 .navbar {
   padding: 8px;
@@ -226,7 +247,7 @@ a {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-  border-bottom: 4px solid #ffffff;
+  border-bottom: 4px solid #fed206;
   padding: 100px 0 30px 0; }
   .mainBanner:before {
     content: url("../images/arrow.png");
@@ -253,9 +274,57 @@ a {
       font-size: 20px;
       color: #ffffff;
       margin: 70px 0 0 0;
-      animation: jump 1.5s linear infinite; }
+      animation: jump 1.5s linear infinite;
+      cursor: pointer; }
       .mainBanner .wrapper .mainBanner__link:hover {
         color: #fed206; }
 
-#about .about__heading {
-  text-transform: uppercase; }
+.aboutSection {
+  padding: 50px 0 40px 0; }
+  .aboutSection .wrapper {
+    flex-direction: column;
+    align-items: center; }
+    .aboutSection .wrapper .aboutSection__heading--main {
+      text-transform: uppercase;
+      margin: 0 0 10px 0; }
+    .aboutSection .wrapper .aboutSection__heading--sub {
+      text-transform: uppercase;
+      margin: 0 0 40px 0; }
+    .aboutSection .wrapper .aboutSection__wrapper {
+      padding: 10px 50px 10px; }
+      .aboutSection .wrapper .aboutSection__wrapper .aboutSection__ico {
+        width: 120px;
+        height: auto;
+        margin: 0 0 20px 0; }
+      .aboutSection .wrapper .aboutSection__wrapper h6 {
+        font-family: "amaranth-boldItalic"; }
+
+.subscribeSection {
+  padding: 50px 0 0 0;
+  background-color: #f9f9f9; }
+  .subscribeSection .wrapper {
+    flex-direction: column;
+    align-items: center; }
+    .subscribeSection .wrapper .subscribeSection__heading {
+      text-transform: uppercase; }
+    .subscribeSection .wrapper .subscribeSection__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      margin: 50px auto;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+      border: none;
+      border-radius: 10px;
+      padding: 30px 10px;
+      background-color: #ffffff; }
+      .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardHeading {
+        max-width: 400px;
+        margin: 0 auto 15px; }
+      .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInputLabel {
+        display: block;
+        font-family: "amaranth-regular";
+        font-size: 16px;
+        color: #000000;
+        margin: 10px 0; }
