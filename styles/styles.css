@@ -87,7 +87,11 @@ p {
   color: #000000; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: "amaranth-regular";
+  font-size: 16px; }
+  a:focus {
+    outline: 1px dashed #fed206; }
 
 .wrapper {
   display: flex;
@@ -280,7 +284,7 @@ a {
         color: #fed206; }
 
 .aboutSection {
-  padding: 50px 0 40px 0; }
+  padding: 50px 0 20px 0; }
   .aboutSection .wrapper {
     flex-direction: column;
     align-items: center; }
@@ -291,7 +295,7 @@ a {
       text-transform: uppercase;
       margin: 0 0 40px 0; }
     .aboutSection .wrapper .aboutSection__wrapper {
-      padding: 10px 50px 10px; }
+      padding: 10px 50px 30px; }
       .aboutSection .wrapper .aboutSection__wrapper .aboutSection__ico {
         width: 120px;
         height: auto;
@@ -317,14 +321,87 @@ a {
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
       border: none;
       border-radius: 10px;
-      padding: 30px 10px;
+      padding: 70px 10px;
       background-color: #ffffff; }
+      @media (max-width: 600px) {
+        .subscribeSection .wrapper .subscribeSection__card {
+          width: 100%; } }
       .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardHeading {
-        max-width: 400px;
-        margin: 0 auto 15px; }
+        max-width: 390px;
+        margin: 0 auto 10px; }
       .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInputLabel {
         display: block;
         font-family: "amaranth-regular";
         font-size: 16px;
         color: #000000;
-        margin: 10px 0; }
+        margin: 15px 0; }
+      .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInput {
+        border: 2px solid transparent;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+        padding: 5px;
+        font-family: "amaranth-regular";
+        font-size: 14px;
+        outline: none;
+        width: 250px;
+        margin: 0 auto; }
+        .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInput::placeholder {
+          opacity: 0.6; }
+        .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInput:focus:invalid {
+          border: 2px solid red; }
+        .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardInput:required:valid {
+          background: #ffffff url(../images/check.png);
+          background-repeat: no-repeat;
+          background-position: 96% center;
+          padding-right: 35px; }
+      .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardSubmit {
+        display: block;
+        border: 2px solid transparent;
+        margin: 30px auto 0;
+        padding: 10px 30px;
+        font-family: "amaranth-regular";
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #fed206;
+        border-radius: 30px;
+        color: #ffffff; }
+        .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardSubmit:hover {
+          background-color: #ffffff;
+          color: #fed206;
+          border: 2px solid #fed206; }
+        .subscribeSection .wrapper .subscribeSection__card .subscribeSection__cardSubmit:focus {
+          outline: 1px dashed #fed206; }
+
+.footer {
+  padding: 15px 0;
+  background-color: #000000; }
+  .footer .wrapper {
+    justify-content: center; }
+    .footer .wrapper .footer__nav {
+      display: inline-flex;
+      align-items: center;
+      list-style: none;
+      width: 50%;
+      margin: 10px 0; }
+      .footer .wrapper .footer__nav li a {
+        color: #ffffff;
+        margin: 0 15px 0 0; }
+        .footer .wrapper .footer__nav li a:hover {
+          color: #fed206; }
+    .footer .wrapper .socialIcons {
+      display: inline-flex;
+      justify-content: flex-end;
+      width: 50%;
+      margin: 10px 0; }
+      .footer .wrapper .socialIcons .socialIcons__ico {
+        width: 25px;
+        height: 25px;
+        margin: 0 15px 0 0; }
+        .footer .wrapper .socialIcons .socialIcons__ico:hover {
+          transform: translateY(-15%); }
+    .footer .wrapper .footer__copyright {
+      margin: 10px 0 0 0;
+      font-size: 12px;
+      color: #ffffff; }
+      .footer .wrapper .footer__copyright a {
+        font-size: 12px;
+        color: #fed206; }

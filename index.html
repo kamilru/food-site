@@ -64,10 +64,27 @@
                 <h3 class="subscribeSection__cardHeading">SIGN UP FOR OUR MAILING LIST TO GET UPDATES.</h3>
                 <form>
                     <label for="emailSub" class="subscribeSection__cardInputLabel">Leave your email: </label>
-                    <input id="emailSub" type="email" placeholder="Email" class="subscribeSection__cardInput">
+                    <input id="emailSub" type="email" placeholder="Email" class="subscribeSection__cardInput" required>
+                    <input type="submit" class="subscribeSection__cardSubmit" id="submitBtn" value="Subscribe">
                 </form>
             </div>
         </div>
     </section>
+    
+    <footer class="footer">
+        <div class="wrapper">
+            <ul class="footer__nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
+            </ul>
+            
+            <div class="socialIcons">
+                <a href="#"><img class="socialIcons__ico" src="images/fb.svg"></a>
+                <a href="#"><img class="socialIcons__ico" src="images/twitter.svg"></a>    
+            </div>
+            <p class="footer__copyright">Copyright &copy; by <a href="mailto:example@example.pl">FoodDesign</a>. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

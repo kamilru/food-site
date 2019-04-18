@@ -36,21 +36,6 @@
 			@content;
 		}
 	}
-    @if $width==991 {
-		@media ( max-width: 991px ) {
-			@content;
-		}
-	}
-	@if $width==1024 {
-		@media ( max-width: 1024px ) {
-			@content;
-		}
-	}
-	@if $width==1140 {
-		@media ( max-width: 1140px ) {
-			@content;
-		}
-	}
 }
 
 //variables
@@ -167,6 +152,12 @@ p {
 
 a {
     text-decoration: none;
+    font-family: $amareg;
+    font-size: 16px;
+    
+    &:focus {
+        outline: 1px dashed $color3;
+    }
 }
 
 .wrapper {
@@ -446,7 +437,7 @@ a {
 }
 
 .aboutSection {
-    padding: 50px 0 40px 0;
+    padding: 50px 0 20px 0;
     
     .wrapper {
         flex-direction: column;
@@ -463,7 +454,7 @@ a {
         }
         
         .aboutSection__wrapper {
-            padding: 10px 50px 10px;
+            padding: 10px 50px 30px;
             
             .aboutSection__ico {
                 width: 120px;
@@ -500,12 +491,16 @@ a {
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
             border: none;
             border-radius: 10px;
-            padding: 30px 10px;
+            padding: 70px 10px;
             background-color: $color1;
             
+            @include resp(600) {
+                width: 100%;
+            }
+            
             .subscribeSection__cardHeading {
-                max-width: 400px;
-                margin: 0 auto 15px;
+                max-width: 390px;
+                margin: 0 auto 10px;
             }
             
             .subscribeSection__cardInputLabel {
@@ -513,7 +508,117 @@ a {
                 font-family: $amareg;
                 font-size: 16px;
                 color: $color2;
-                margin: 10px 0;
+                margin: 15px 0;
+            }
+            
+            .subscribeSection__cardInput {
+                border: 2px solid transparent;
+                border-bottom: 2px solid rgba(0,0,0,0.3);
+                padding: 5px;
+                font-family: $amareg;
+                font-size: 14px;
+                outline: none;
+                width: 250px;
+                margin: 0 auto;
+                
+                &::placeholder {
+                    opacity: 0.6;
+                }
+            
+                 &:focus {
+                    &:invalid {
+                        border: 2px solid red;
+                    }
+            
+                }
+                
+                &:required {
+                    &:valid {
+                        background: $color1 url(../images/check.png);
+                        background-repeat: no-repeat;
+                        background-position: 96% center;
+                        padding-right: 35px;
+                    }   
+                }
+            }
+            
+            .subscribeSection__cardSubmit {
+                display: block;
+                border: 2px solid transparent;
+                margin: 30px auto 0;
+                padding: 10px 30px;
+                font-family: $amareg;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: $color3;
+                border-radius: 30px;
+                color: $color1;
+                
+                &:hover {
+                    background-color: $color1;
+                    color: $color3;
+                    border: 2px solid $color3;
+                }
+                
+                &:focus {
+                    outline: 1px dashed $color3;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 15px 0;
+    background-color: $color2;
+    
+    .wrapper {
+        justify-content: center;
+        
+        .footer__nav {
+            display: inline-flex;
+            align-items: center;
+            list-style: none;
+            width: 50%;
+            margin: 10px 0;
+            
+            li {
+                a {
+                    color: $color1;
+                    margin: 0 15px 0 0;
+                    
+                    &:hover {
+                        color: $color3;
+                    }
+                }
+            }
+        }
+        
+        .socialIcons {
+            display: inline-flex;
+            justify-content: flex-end;
+            width: 50%;
+            margin: 10px 0;
+            
+            .socialIcons__ico {
+                width: 25px;
+                height: 25px;
+                margin: 0 15px 0 0;
+                
+                &:hover {
+                    transform: translateY(-15%);
+                }
+            }
+        }
+        
+        .footer__copyright {
+            margin: 10px 0 0 0;
+            font-size: 12px;
+            color: $color1;
+            
+            a {
+                font-size: 12px;
+                color: $color3;
             }
         }
     }
