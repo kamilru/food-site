@@ -24,7 +24,7 @@ $(document).ready(function(){
      
         $.ajax({
             type: 'POST',
-            url: 'test.php', 
+            url: './scripts/test.php', 
             data: $(this).serialize()
         })
         .done(function(data){
